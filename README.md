@@ -1,2 +1,2 @@
-sidequest2
+SideQuest II
 ==========
