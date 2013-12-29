@@ -1,25 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Quelldateien">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <ClCompile Include="App.cpp">
+      <Filter>GameEngine\App</Filter>
+    </ClCompile>
+    <ClCompile Include="SideQuestMain.cpp">
+      <Filter>GameEngine\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Libs.cpp">
+      <Filter>GameEngine\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>GameEngine\Config</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="GameEngine">
+      <UniqueIdentifier>{41a3a34a-9993-49dc-82dd-0e25e3b99fe3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headerdateien">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    <Filter Include="GameEngine\App">
+      <UniqueIdentifier>{81ab6f8b-727e-4ca2-ad64-0e2377dc5b56}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Ressourcendateien">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="GameEngine\Misc">
+      <UniqueIdentifier>{46d8ef35-f88a-425a-b24d-6702dd82f2a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\Config">
+      <UniqueIdentifier>{b9d8f48a-358e-4678-8bbe-4a7813dded79}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SideQuestMain.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="Libs.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
+    <ClInclude Include="App.h">
+      <Filter>GameEngine\App</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>GameEngine\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="string_op.h">
+      <Filter>GameEngine\Misc</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
