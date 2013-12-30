@@ -2,6 +2,7 @@
 #include "Config.h"
 #include "CircleState.h"
 #include "RectState.h"
+#include "StartupState.h"
 
 App::App(Config& c)
 	: m_accumulator(0)
@@ -14,7 +15,8 @@ App::App(Config& c)
 
 	statemanager.registerState("circle", std::unique_ptr<State>(new CircleState(*this)));
 	statemanager.registerState("rect", std::unique_ptr<State>(new RectState(*this)));
-	statemanager.pushState("circle");
+	statemanager.registerState("startup", std::unique_ptr<State>(new StartupState(*this)));
+	statemanager.pushState("startup");
 }
 
 void App::run()

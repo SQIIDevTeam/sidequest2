@@ -1,7 +1,7 @@
 #pragma once
-
 #include <SFML\Graphics.hpp>
 #include "StateManager.h"
+#include "ResourceManager.h"
 class Config;
 
 class App
@@ -15,6 +15,8 @@ public:
 	float timestep;
 	sf::RenderWindow window;
 	StateManager statemanager;
+	TextureManager texturemanager;
+	FontManager fontmanager;
 private:
 	void update();
 	void render();

@@ -22,9 +22,11 @@ T& ResourceManager<T>::get(std::string path)
 	auto it = m_resourcemap.find(path);
 	if (it == m_resourcemap.end())
 	{
-		m_resourcemap[path] = std::move(std::unique_ptr<T>(new T(path)));
+		std::unique_ptr<T> res(new T);
+		res->loadFromFile(path);
+		m_resourcemap[path] = std::move(res);
 	}
-	return m_resourcemap[path];
+	return *m_resourcemap[path];
 }
 
 template<typename T>

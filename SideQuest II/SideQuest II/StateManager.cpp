@@ -156,7 +156,8 @@ void StateManager::update()
 			m_transitionTimeSec = 0;
 			if (m_transitionAction == TransitionAction::PUSH)
 			{
-				m_stack.top()->onExit();
+				if (!m_stack.empty())
+					m_stack.top()->onExit();
 				m_stack.push(m_transitionNextState);
 				m_transitionNextState->onEnter();
 			}

@@ -25,7 +25,9 @@
     <ClCompile Include="Stack.cpp">
       <Filter>GameEngine\Stack</Filter>
     </ClCompile>
-    <ClCompile Include="StartupState.cpp" />
+    <ClCompile Include="StartupState.cpp">
+      <Filter>Game\States\Startup</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Game">
@@ -93,7 +95,11 @@
     <ClInclude Include="Stack.h">
       <Filter>GameEngine\Stack</Filter>
     </ClInclude>
-    <ClInclude Include="StartupState.h" />
-    <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="StartupState.h">
+      <Filter>Game\States\Startup</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>GameEngine\ResourceManager</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
