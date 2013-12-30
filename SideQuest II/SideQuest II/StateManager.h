@@ -1,7 +1,7 @@
 #pragma once
 #include <map>
 #include <memory>
-#include <stack>
+#include "Stack.h"
 #include "State.h"
 
 class StateManager : public sf::Drawable
@@ -22,7 +22,7 @@ public:
 
 private:
 	std::map<std::string, std::unique_ptr<State>> m_registered;
-	std::stack<State*> m_stack;
+	Stack<State*> m_stack;
 
 	bool m_running;
 	App& m_app;
@@ -37,7 +37,15 @@ private:
 	TransitionState m_transitionState;
 	sf::RenderTexture m_transitionTextureSource;
 	sf::RenderTexture m_transitionTextureDest;
-	std::string m_transitionNextStateId;
+	State* m_transitionNextState;
 	int m_transitionAlpha;
+	float m_transitionTimeSec;
+	enum class TransitionAction
+	{
+		PUSH,
+		POP,
+		SET
+	};
+	TransitionAction m_transitionAction;
 };
 

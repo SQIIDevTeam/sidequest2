@@ -88,6 +88,8 @@
     <ClCompile Include="Libs.cpp" />
     <ClCompile Include="RectState.cpp" />
     <ClCompile Include="SideQuestMain.cpp" />
+    <ClCompile Include="Stack.cpp" />
+    <ClCompile Include="StartupState.cpp" />
     <ClCompile Include="StateManager.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +98,9 @@
     <ClInclude Include="Config.h" />
     <ClInclude Include="math.h" />
     <ClInclude Include="RectState.h" />
+    <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="Stack.h" />
+    <ClInclude Include="StartupState.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="string_op.h" />

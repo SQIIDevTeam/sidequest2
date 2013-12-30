@@ -22,6 +22,10 @@
     <ClCompile Include="RectState.cpp">
       <Filter>Game\States\RectState</Filter>
     </ClCompile>
+    <ClCompile Include="Stack.cpp">
+      <Filter>GameEngine\Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="StartupState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Game">
@@ -51,6 +55,15 @@
     <Filter Include="GameEngine\StateManager">
       <UniqueIdentifier>{f9068ab1-827f-41b8-9c66-6b2cf1a1c51e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameEngine\Stack">
+      <UniqueIdentifier>{407d92bc-6f18-4ac9-ace8-b169d0ac1971}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\States\Startup">
+      <UniqueIdentifier>{f87db9cf-3e48-4e67-8006-6ad6a6aeb0c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\ResourceManager">
+      <UniqueIdentifier>{39b218fa-20ca-4940-abdc-ae1ca0fb4576}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h">
@@ -77,5 +90,10 @@
     <ClInclude Include="math.h">
       <Filter>GameEngine\Misc</Filter>
     </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>GameEngine\Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="StartupState.h" />
+    <ClInclude Include="ResourceManager.h" />
   </ItemGroup>
 </Project>

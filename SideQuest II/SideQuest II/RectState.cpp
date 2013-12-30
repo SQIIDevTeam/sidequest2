@@ -17,5 +17,5 @@ void RectState::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 void RectState::update()
 {
-
+	m_app.statemanager.popState();
 }

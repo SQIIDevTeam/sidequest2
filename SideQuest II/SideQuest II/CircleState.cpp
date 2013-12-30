@@ -1,5 +1,5 @@
 #include "CircleState.h"
-
+#include "App.h"
 
 CircleState::CircleState(App& app)
 : State(app)
@@ -8,7 +8,7 @@ CircleState::CircleState(App& app)
 
 void CircleState::update()
 {
-
+		m_app.statemanager.pushState("rect");		
 }
 
 void CircleState::draw(sf::RenderTarget& target, sf::RenderStates states) const

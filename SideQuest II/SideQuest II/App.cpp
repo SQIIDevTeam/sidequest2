@@ -9,6 +9,8 @@ App::App(Config& c)
 	, statemanager(*this)
 {
 	window.create(sf::VideoMode(c.get<unsigned int>("windowsize_x"), c.get<unsigned int>("windowsize_y")), "SideQuest II");
+	window.clear();
+	window.display();
 
 	statemanager.registerState("circle", std::unique_ptr<State>(new CircleState(*this)));
 	statemanager.registerState("rect", std::unique_ptr<State>(new RectState(*this)));
@@ -28,6 +30,8 @@ void App::run()
 
 		float frametime = m_clock.restart().asSeconds();
 		m_accumulator += frametime;
+
+		window.setTitle("SideQuest II - Frametime: " + toString(frametime) + " - FPS: " + toString(1/frametime));
 
 		while (m_accumulator >= timestep)
 		{

@@ -1,15 +1,13 @@
 #pragma once
 #include "State.h"
-#include "App.h"
-class RectState :
+class StartupState :
 	public State
 {
 public:
-	RectState(App& app);
-
+	StartupState(App& app);
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 	virtual void update();
 private:
-	sf::Clock m_clock;
+
 };
 
