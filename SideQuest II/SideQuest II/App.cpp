@@ -1,44 +1,51 @@
 #include "App.h"
 #include "Config.h"
+#include "CircleState.h"
+#include "RectState.h"
 
 App::App(Config& c)
+	: m_accumulator(0)
+	, timestep(1.f / 60.f)
+	, statemanager(*this)
 {
-	m_window.create(sf::VideoMode(c.get<unsigned int>("windowsize_x"), c.get<unsigned int>("windowsize_y")), "SideQuest II");
+	window.create(sf::VideoMode(c.get<unsigned int>("windowsize_x"), c.get<unsigned int>("windowsize_y")), "SideQuest II");
+
+	statemanager.registerState("circle", std::unique_ptr<State>(new CircleState(*this)));
+	statemanager.registerState("rect", std::unique_ptr<State>(new RectState(*this)));
+	statemanager.pushState("circle");
 }
 
 void App::run()
 {
-	while (m_window.isOpen())
+	while (window.isOpen())
 	{
 		sf::Event e;
-		while (m_window.pollEvent(e))
+		while (window.pollEvent(e))
 		{
 			if (e.type == sf::Event::Closed)
-				m_window.close();
+				window.close();
 		}
 
-		update();
+		float frametime = m_clock.restart().asSeconds();
+		m_accumulator += frametime;
+
+		while (m_accumulator >= timestep)
+		{
+			m_accumulator -= timestep;
+			update();
+		}	
 		render();
 	}
 }
 
-sf::RenderWindow& App::window()
-{
-	return m_window;
-}
-
-const sf::RenderWindow& App::window() const
-{
-	return m_window;
-}
-
 void App::update()
 {
-
+	statemanager.update();
 }
 
 void App::render()
 {
-	m_window.clear();
-	m_window.display();
+	window.clear();
+	window.draw(statemanager);
+	window.display();
 }

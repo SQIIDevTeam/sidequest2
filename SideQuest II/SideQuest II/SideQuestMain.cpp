@@ -16,7 +16,5 @@ int main()
 	{
 		std::cerr << "Exception in game: " << exc.what() << '\n';
 	}
-	
-	std::cin.get();
 	return 0;
 }

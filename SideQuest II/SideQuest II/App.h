@@ -1,5 +1,7 @@
 #pragma once
+
 #include <SFML\Graphics.hpp>
+#include "StateManager.h"
 class Config;
 
 class App
@@ -9,12 +11,15 @@ public:
 
 	void run();
 
-	sf::RenderWindow& window();
-	const sf::RenderWindow& window() const;
+public:
+	float timestep;
+	sf::RenderWindow window;
+	StateManager statemanager;
 private:
 	void update();
 	void render();
 private:
-	sf::RenderWindow m_window;
+	float m_accumulator;
+	sf::Clock m_clock;
 };
 

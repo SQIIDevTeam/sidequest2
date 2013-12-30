@@ -83,13 +83,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="CircleState.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="Libs.cpp" />
+    <ClCompile Include="RectState.cpp" />
     <ClCompile Include="SideQuestMain.cpp" />
+    <ClCompile Include="StateManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
+    <ClInclude Include="CircleState.h" />
     <ClInclude Include="Config.h" />
+    <ClInclude Include="math.h" />
+    <ClInclude Include="RectState.h" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="StateManager.h" />
     <ClInclude Include="string_op.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

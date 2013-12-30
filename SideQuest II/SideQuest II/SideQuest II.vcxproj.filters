@@ -13,8 +13,29 @@
     <ClCompile Include="Config.cpp">
       <Filter>GameEngine\Config</Filter>
     </ClCompile>
+    <ClCompile Include="StateManager.cpp">
+      <Filter>GameEngine\StateManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleState.cpp">
+      <Filter>Game\States\CircleState</Filter>
+    </ClCompile>
+    <ClCompile Include="RectState.cpp">
+      <Filter>Game\States\RectState</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <Filter Include="Game">
+      <UniqueIdentifier>{0945d9f8-cd53-41ba-bc71-fed0a52e67eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\States">
+      <UniqueIdentifier>{a746d35f-bf1c-4a29-bc12-2e8291e1bd81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\States\RectState">
+      <UniqueIdentifier>{0bf93ff3-6d9f-4800-9937-f5771cd09b44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\States\CircleState">
+      <UniqueIdentifier>{92dd5b34-7c41-4349-8131-5061e89620b2}</UniqueIdentifier>
+    </Filter>
     <Filter Include="GameEngine">
       <UniqueIdentifier>{41a3a34a-9993-49dc-82dd-0e25e3b99fe3}</UniqueIdentifier>
     </Filter>
@@ -27,6 +48,9 @@
     <Filter Include="GameEngine\Config">
       <UniqueIdentifier>{b9d8f48a-358e-4678-8bbe-4a7813dded79}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameEngine\StateManager">
+      <UniqueIdentifier>{f9068ab1-827f-41b8-9c66-6b2cf1a1c51e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h">
@@ -36,6 +60,21 @@
       <Filter>GameEngine\Config</Filter>
     </ClInclude>
     <ClInclude Include="string_op.h">
+      <Filter>GameEngine\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="StateManager.h">
+      <Filter>GameEngine\StateManager</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>GameEngine\StateManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleState.h">
+      <Filter>Game\States\CircleState</Filter>
+    </ClInclude>
+    <ClInclude Include="RectState.h">
+      <Filter>Game\States\RectState</Filter>
+    </ClInclude>
+    <ClInclude Include="math.h">
       <Filter>GameEngine\Misc</Filter>
     </ClInclude>
   </ItemGroup>

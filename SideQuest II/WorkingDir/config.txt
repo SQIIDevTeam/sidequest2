@@ -1,0 +1,2 @@
+windowsize_x=1280
+windowsize_y=768
