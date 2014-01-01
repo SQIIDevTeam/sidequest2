@@ -3,6 +3,7 @@
 #include "CircleState.h"
 #include "RectState.h"
 #include "StartupState.h"
+#include "MainMenuState.h"
 
 App::App(Config& c)
 	: m_accumulator(0)
@@ -17,6 +18,7 @@ App::App(Config& c)
 	statemanager.registerState("circle", std::unique_ptr<State>(new CircleState(*this)));
 	statemanager.registerState("rect", std::unique_ptr<State>(new RectState(*this)));
 	statemanager.registerState("startup", std::unique_ptr<State>(new StartupState(*this)));
+	statemanager.registerState("mainmenu", std::unique_ptr<State>(new MainMenuState(*this)));
 	statemanager.pushState("startup");
 }
 
@@ -34,11 +36,13 @@ void App::run()
 		float frametime = m_clock.restart().asSeconds();
 		m_accumulator += frametime;
 
-		window.setTitle("SideQuest II - Frametime: " + toString(frametime) + " - FPS: " + toString(1/frametime));
+		
 
 		while (m_accumulator >= timestep)
 		{
 			m_accumulator -= timestep;
+			window.setTitle("SideQuest II - Frametime: " + toString(frametime) + " - FPS: " + toString(1 / frametime));
+			inputmanager.update();
 			update();
 		}	
 		render();

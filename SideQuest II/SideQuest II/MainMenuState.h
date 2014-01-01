@@ -9,5 +9,8 @@ public:
 
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 	virtual void update();
+private:
+	sf::Texture& m_borderTexture;
+	sf::Sprite m_borderSprite;
 };
 

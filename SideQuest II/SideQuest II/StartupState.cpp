@@ -29,5 +29,8 @@ void StartupState::update()
 	m_logosprite.setOrigin(m_logotex.getSize().x / 2.f, m_logotex.getSize().y / 2.f);
 	m_logosprite.setPosition(m_app.window.getSize().x / 2.f, m_app.window.getSize().y / 2.f);
 
-	
+	if (m_app.inputmanager.isKeyHit(sf::Keyboard::Return))
+	{
+		m_app.statemanager.setTopState("mainmenu");
+	}
 }
