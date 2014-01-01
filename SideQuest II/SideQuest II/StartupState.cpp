@@ -24,8 +24,10 @@ void StartupState::update()
 {
 	m_time_elapsed += m_app.timestep;
 
-	m_continue_text.setColor(sf::Color(255, 255, 255, (sinf(m_time_elapsed * 2.5f)+1.1f)/2.1f * 255));
+	m_continue_text.setColor(sf::Color(255, 255, 255, (sinf(m_time_elapsed * 3.f)+1.3f)/2.3f * 255));
 	// Set the sprite to the middle of the screen
 	m_logosprite.setOrigin(m_logotex.getSize().x / 2.f, m_logotex.getSize().y / 2.f);
 	m_logosprite.setPosition(m_app.window.getSize().x / 2.f, m_app.window.getSize().y / 2.f);
+
+	
 }

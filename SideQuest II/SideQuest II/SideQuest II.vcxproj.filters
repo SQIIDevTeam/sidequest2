@@ -28,6 +28,10 @@
     <ClCompile Include="StartupState.cpp">
       <Filter>Game\States\Startup</Filter>
     </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>GameEngine\InputManager</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Game">
@@ -66,6 +70,12 @@
     <Filter Include="GameEngine\ResourceManager">
       <UniqueIdentifier>{39b218fa-20ca-4940-abdc-ae1ca0fb4576}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameEngine\InputManager">
+      <UniqueIdentifier>{dba41dac-d16c-44e2-a5c1-0922bb8174dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\States\MainMenuState">
+      <UniqueIdentifier>{d4807c17-db76-4ab0-b49e-1ee2a855f685}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h">
@@ -101,5 +111,9 @@
     <ClInclude Include="ResourceManager.h">
       <Filter>GameEngine\ResourceManager</Filter>
     </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>GameEngine\InputManager</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuState.h" />
   </ItemGroup>
 </Project>

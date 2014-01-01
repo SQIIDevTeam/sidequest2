@@ -2,6 +2,7 @@
 #include <SFML\Graphics.hpp>
 #include "StateManager.h"
 #include "ResourceManager.h"
+#include "InputManager.h"
 class Config;
 
 class App
@@ -17,6 +18,7 @@ public:
 	StateManager statemanager;
 	TextureManager texturemanager;
 	FontManager fontmanager;
+	InputManager inputmanager;
 private:
 	void update();
 	void render();

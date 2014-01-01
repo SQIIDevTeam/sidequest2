@@ -8,6 +8,7 @@ App::App(Config& c)
 	: m_accumulator(0)
 	, timestep(1.f / 60.f)
 	, statemanager(*this)
+	, inputmanager(this->window)
 {
 	window.create(sf::VideoMode(c.get<unsigned int>("windowsize_x"), c.get<unsigned int>("windowsize_y")), "SideQuest II");
 	window.clear();
