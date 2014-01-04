@@ -6,6 +6,8 @@ MainMenuState::MainMenuState(App& app)
 , m_borderTexture(m_app.texturemanager.get("Assets/Menu/border.png"))
 , m_borderSprite(m_borderTexture)
 {
+	m_borderSprite.setOrigin(m_borderSprite.getLocalBounds().width / 2.f, m_borderSprite.getLocalBounds().height / 2.f);
+	m_borderSprite.setPosition(m_app.window.getView().getCenter());
 }
 
 
