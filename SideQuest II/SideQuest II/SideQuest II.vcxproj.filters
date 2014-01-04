@@ -31,7 +31,9 @@
     <ClCompile Include="InputManager.cpp">
       <Filter>GameEngine\InputManager</Filter>
     </ClCompile>
-    <ClCompile Include="MainMenuState.cpp" />
+    <ClCompile Include="MainMenuState.cpp">
+      <Filter>Game\States\MainMenuState</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Game">
@@ -114,6 +116,8 @@
     <ClInclude Include="InputManager.h">
       <Filter>GameEngine\InputManager</Filter>
     </ClInclude>
-    <ClInclude Include="MainMenuState.h" />
+    <ClInclude Include="MainMenuState.h">
+      <Filter>Game\States\MainMenuState</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
