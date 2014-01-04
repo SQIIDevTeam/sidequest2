@@ -14,9 +14,9 @@ void Menu::addButton(Button b)
 	m_buttons.push_back(b);
 }
 
-void Menu::addButton(const std::string& texturePath, const std::string& hoverTexturePath, const std::string& fontPath, std::string text)
+void Menu::addButton(const std::string& texturePath, const std::string& hoverTexturePath, const std::string& fontPath, std::string text, std::function<void(sf::Vector2f point)> handler)
 {
-	addButton(Button(m_app, *this, m_app.texturemanager.get(texturePath), m_app.texturemanager.get(hoverTexturePath), m_app.fontmanager.get(fontPath), text));
+	addButton(Button(m_app, *this, m_app.texturemanager.get(texturePath), m_app.texturemanager.get(hoverTexturePath), m_app.fontmanager.get(fontPath), text, handler));
 }
 
 void Menu::setBorderTexture(sf::Texture& texture)

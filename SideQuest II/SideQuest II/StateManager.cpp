@@ -7,6 +7,7 @@ StateManager::StateManager(App& app)
 , m_transitionAlpha(255)
 , m_transitionState(TransitionState::NONE)
 , m_transitionTimeSec(0)
+, m_running(true)
 {
 }
 
@@ -135,7 +136,7 @@ void StateManager::update()
 	}
 	if (m_transitionState == TransitionState::IN_PROGRESS_BLEND_DOWN)
 	{
-		m_transitionAlpha = static_cast<int>(lerp(m_transitionAlpha, 0.f, m_transitionTimeSec * 0.02f) - 0.5f);
+		m_transitionAlpha = static_cast<int>(lerp(static_cast<int>(m_transitionAlpha), 0.f, m_transitionTimeSec * 0.02f) - 0.5f);
 		m_transitionTimeSec += m_app.timestep;
 		if (m_transitionAlpha <= 10)
 		{
@@ -147,7 +148,7 @@ void StateManager::update()
 	}
 	if (m_transitionState == TransitionState::IN_PROGRESS_BLEND_UP)
 	{
-		m_transitionAlpha = static_cast<int>(lerp(m_transitionAlpha, 255.f, m_transitionTimeSec * 0.02f) + 0.5f);
+		m_transitionAlpha = static_cast<int>(lerp(static_cast<int>(m_transitionAlpha), 255.f, m_transitionTimeSec * 0.02f) + 0.5f);
 		m_transitionTimeSec += m_app.timestep;
 		if (m_transitionAlpha >= 240)
 		{
@@ -204,4 +205,9 @@ void StateManager::draw(sf::RenderTarget& target, sf::RenderStates states) const
 bool StateManager::isRunning() const
 {
 	return m_running;
+}
+
+void StateManager::setRunning(bool running)
+{
+	m_running = running;
 }

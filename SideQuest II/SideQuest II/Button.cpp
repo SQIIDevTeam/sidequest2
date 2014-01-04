@@ -1,13 +1,14 @@
 #include "Button.h"
 #include "Menu.h"
 
-Button::Button(App& app, Menu& menu, sf::Texture& texture, sf::Texture& hoverTexture, const sf::Font& font, const std::string str)
+Button::Button(App& app, Menu& menu, sf::Texture& texture, sf::Texture& hoverTexture, const sf::Font& font, const std::string str, std::function<void(sf::Vector2f point)> handler)
 : m_app(app)
 , m_text(str, font)
 , m_sprite(texture)
 , m_normalTexture(texture)
 , m_hoverTexture(hoverTexture)
 , m_menu(menu)
+, m_handler(handler)
 {
 	sf::FloatRect rect(m_text.getLocalBounds());
 	m_text.setOrigin((rect.left + rect.width) / 2.f, (rect.top + rect.height) / 2.f);

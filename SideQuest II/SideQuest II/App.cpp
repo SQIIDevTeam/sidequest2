@@ -24,7 +24,7 @@ App::App(Config& c)
 
 void App::run()
 {
-	while (window.isOpen())
+	while (window.isOpen() && statemanager.isRunning())
 	{
 		sf::Event e;
 		while (window.pollEvent(e))

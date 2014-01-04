@@ -11,7 +11,7 @@ class Button :
 	public sf::Transformable
 {
 public:
-	Button(App& app, Menu& menu, sf::Texture& texture, sf::Texture& hoverTexture, const sf::Font& font, std::string str = "");
+	Button(App& app, Menu& menu, sf::Texture& texture, sf::Texture& hoverTexture, const sf::Font& font, std::string str, std::function<void(sf::Vector2f point)> handler);
 	void setText(const std::string& text);
 	void setTexture(const sf::Texture& tex);
 	void setFont(const sf::Font& font);
