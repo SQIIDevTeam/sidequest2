@@ -45,7 +45,8 @@ private:
 	{
 		PUSH,
 		POP,
-		SET
+		SET,
+		SHUTDOWN
 	};
 	TransitionAction m_transitionAction;
 };
