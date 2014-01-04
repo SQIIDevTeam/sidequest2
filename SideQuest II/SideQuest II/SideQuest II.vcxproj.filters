@@ -34,6 +34,12 @@
     <ClCompile Include="MainMenuState.cpp">
       <Filter>Game\States\MainMenuState</Filter>
     </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>GameEngine\Menu\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>GameEngine\Menu\Menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Game">
@@ -78,6 +84,15 @@
     <Filter Include="Game\States\MainMenuState">
       <UniqueIdentifier>{d4807c17-db76-4ab0-b49e-1ee2a855f685}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameEngine\Menu">
+      <UniqueIdentifier>{a070a554-a8f6-4f9a-8c37-add6a87b9d26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\Menu\Menu">
+      <UniqueIdentifier>{47c6a0b2-9af7-4db0-b66b-9053a56166fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\Menu\Button">
+      <UniqueIdentifier>{188d4203-ea29-492d-b8e9-b3dc402c0313}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h">
@@ -118,6 +133,12 @@
     </ClInclude>
     <ClInclude Include="MainMenuState.h">
       <Filter>Game\States\MainMenuState</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>GameEngine\Menu\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>GameEngine\Menu\Menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

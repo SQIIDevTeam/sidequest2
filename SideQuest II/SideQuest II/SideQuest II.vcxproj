@@ -53,7 +53,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>../../Libs/SFML/Headers</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -83,11 +83,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="CircleState.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Libs.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="RectState.cpp" />
     <ClCompile Include="SideQuestMain.cpp" />
     <ClCompile Include="Stack.cpp" />
@@ -96,11 +98,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="CircleState.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="math.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="RectState.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Stack.h" />
