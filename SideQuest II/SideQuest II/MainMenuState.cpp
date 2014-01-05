@@ -15,6 +15,9 @@ MainMenuState::MainMenuState(App& app)
 	m_menu.addButton("Assets/Menu/button.png", "Assets/Menu/button_hover.png", "Assets/Fonts/ALGER.ttf", "Options", [&](sf::Vector2f&){
 
 	});
+	m_menu.addButton("Assets/Menu/button.png", "Assets/Menu/button_hover.png", "Assets/Fonts/ALGER.ttf", "Credits", [&](sf::Vector2f&){
+
+	});
 	m_menu.addButton("Assets/Menu/button.png", "Assets/Menu/button_hover.png", "Assets/Fonts/ALGER.ttf", "Exit", [&](sf::Vector2f&){
 		m_app.statemanager.setRunning(false);
 	});
