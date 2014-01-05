@@ -7,6 +7,7 @@ StateManager::StateManager(App& app)
 , m_transitionAlpha(255)
 , m_transitionState(TransitionState::NONE)
 , m_transitionTimeSec(0)
+, m_running(true)
 {
 }
 
@@ -135,19 +136,33 @@ void StateManager::update()
 	}
 	if (m_transitionState == TransitionState::IN_PROGRESS_BLEND_DOWN)
 	{
-		m_transitionAlpha = static_cast<int>(lerp(m_transitionAlpha, 0.f, m_transitionTimeSec * 0.02f) - 0.5f);
+		m_transitionAlpha = static_cast<int>(lerp(static_cast<int>(m_transitionAlpha), 0.f, m_transitionTimeSec * 0.02f) - 0.5f);
 		m_transitionTimeSec += m_app.timestep;
+	
 		if (m_transitionAlpha <= 10)
 		{
-			m_transitionState = TransitionState::IN_PROGRESS_BLEND_UP;
-			m_transitionAlpha = 0;
-			m_transitionTimeSec = 0;
+			if (m_transitionAction == TransitionAction::SHUTDOWN)
+			{
+				while (!m_stack.empty())
+				{
+					m_stack.top()->onExit();
+					m_stack.pop();
+					if(!m_stack.empty()) 
+						m_stack.top()->onEnter();
+				}
+				m_running = false;
+			}
+			else
+			{
+				m_transitionState = TransitionState::IN_PROGRESS_BLEND_UP;
+				m_transitionAlpha = 0;
+				m_transitionTimeSec = 0;
+			}
 		}
-		
 	}
 	if (m_transitionState == TransitionState::IN_PROGRESS_BLEND_UP)
 	{
-		m_transitionAlpha = static_cast<int>(lerp(m_transitionAlpha, 255.f, m_transitionTimeSec * 0.02f) + 0.5f);
+		m_transitionAlpha = static_cast<int>(lerp(static_cast<int>(m_transitionAlpha), 255.f, m_transitionTimeSec * 0.02f) + 0.5f);
 		m_transitionTimeSec += m_app.timestep;
 		if (m_transitionAlpha >= 240)
 		{
@@ -204,4 +219,34 @@ void StateManager::draw(sf::RenderTarget& target, sf::RenderStates states) const
 bool StateManager::isRunning() const
 {
 	return m_running;
+}
+
+void StateManager::setRunning(bool running)
+{
+	if (!running && m_transitionState == TransitionState::NONE)
+	{
+		// Create the source texture, black if no state is present
+		m_transitionState = TransitionState::IN_PROGRESS_BLEND_DOWN;
+		m_transitionTextureSource.create(m_app.window.getSize().x, m_app.window.getSize().y);
+		//m_transitionTextureSource.setView(m_app.window.getView());
+		m_transitionTextureSource.clear();
+		if (!m_stack.empty())
+		{
+			m_transitionTextureSource.draw(*m_stack.top());
+		}
+		m_transitionTextureSource.display();
+
+		// Create the destination texture
+		m_transitionTextureDest.create(m_app.window.getSize().x, m_app.window.getSize().y);
+		//m_transitionTextureDest.setView(m_app.window.getView());
+		m_transitionTextureDest.clear();
+		m_transitionTextureDest.display();
+
+		// Set the state
+		m_transitionAction = TransitionAction::SHUTDOWN;
+	}
+	else
+	{
+		m_running = true;
+	}
 }

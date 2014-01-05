@@ -19,6 +19,7 @@ public:
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 	bool isRunning() const;
+	void setRunning(bool running);
 
 private:
 	std::map<std::string, std::unique_ptr<State>> m_registered;
@@ -44,7 +45,8 @@ private:
 	{
 		PUSH,
 		POP,
-		SET
+		SET,
+		SHUTDOWN
 	};
 	TransitionAction m_transitionAction;
 };
