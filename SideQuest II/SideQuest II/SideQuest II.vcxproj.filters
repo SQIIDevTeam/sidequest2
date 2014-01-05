@@ -40,6 +40,9 @@
     <ClCompile Include="Menu.cpp">
       <Filter>GameEngine\Menu\Menu</Filter>
     </ClCompile>
+    <ClCompile Include="CreditState.cpp">
+      <Filter>Game\States\CreditState</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Game">
@@ -93,6 +96,9 @@
     <Filter Include="GameEngine\Menu\Button">
       <UniqueIdentifier>{188d4203-ea29-492d-b8e9-b3dc402c0313}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\States\CreditState">
+      <UniqueIdentifier>{8b5aa450-2cd8-472a-8239-a3fc83841b7e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h">
@@ -139,6 +145,9 @@
     </ClInclude>
     <ClInclude Include="Menu.h">
       <Filter>GameEngine\Menu\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="CreditState.h">
+      <Filter>Game\States\CreditState</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

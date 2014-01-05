@@ -4,6 +4,7 @@
 #include "RectState.h"
 #include "StartupState.h"
 #include "MainMenuState.h"
+#include "CreditState.h"
 
 App::App(Config& c)
 	: m_accumulator(0)
@@ -20,6 +21,7 @@ App::App(Config& c)
 	statemanager.registerState("rect", std::unique_ptr<State>(new RectState(*this)));
 	statemanager.registerState("startup", std::unique_ptr<State>(new StartupState(*this)));
 	statemanager.registerState("mainmenu", std::unique_ptr<State>(new MainMenuState(*this)));
+	statemanager.registerState("credits", std::unique_ptr<State>(new CreditState(*this)));
 	statemanager.pushState("startup");
 }
 
