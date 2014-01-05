@@ -12,6 +12,7 @@ App::App(Config& c)
 	, inputmanager(this->window)
 {
 	window.create(sf::VideoMode(c.get<unsigned int>("windowsize_x"), c.get<unsigned int>("windowsize_y")), "SideQuest II");
+	
 	window.clear();
 	window.display();
 
