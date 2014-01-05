@@ -5,7 +5,7 @@ template <typename T>
 std::string toString(T in)
 {
 	std::stringstream s;
-	s << in;
+	s << std::boolalpha << in;
 	return s.str();
 }
 
@@ -14,6 +14,6 @@ T stringTo(std::string str)
 {
 	std::stringstream s(str);
 	T val;
-	s >> val;
+	s >> std::boolalpha >> val;
 	return val;
 }
