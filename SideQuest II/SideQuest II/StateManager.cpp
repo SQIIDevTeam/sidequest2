@@ -52,6 +52,8 @@ void StateManager::pushState(std::string id)
 		m_transitionTextureDest.create(m_app.window.getSize().x, m_app.window.getSize().y);
 		//m_transitionTextureDest.setView(m_app.window.getView());
 		m_transitionTextureDest.clear();
+		// Update the next state in case ít hasn't caught up with some changes (e.g. window resize)
+		m_registered[id]->update();
 		m_transitionTextureDest.draw(*m_registered[id]);
 		m_transitionTextureDest.display();
 
@@ -69,7 +71,11 @@ void StateManager::popState()
 	{
 		// Create the source texture, black if no state is present
 		m_transitionState = TransitionState::IN_PROGRESS_BLEND_DOWN;
-		m_transitionTextureSource.create(m_app.window.getSize().x, m_app.window.getSize().y);
+		if (m_transitionTextureSource.getSize() != m_app.window.getSize())
+		{
+			m_transitionTextureSource.create(m_app.window.getSize().x, m_app.window.getSize().y);
+		}
+		
 		//m_transitionTextureSource.setView(m_app.window.getView());
 		m_transitionTextureSource.clear();
 		if (!m_stack.empty())
@@ -79,9 +85,14 @@ void StateManager::popState()
 		m_transitionTextureSource.display();
 
 		// Create the destination texture
-		m_transitionTextureDest.create(m_app.window.getSize().x, m_app.window.getSize().y);
+		if (m_transitionTextureDest.getSize() != m_app.window.getSize())
+		{
+			m_transitionTextureDest.create(m_app.window.getSize().x, m_app.window.getSize().y);
+		}
 		//m_transitionTextureDest.setView(m_app.window.getView());
 		m_transitionTextureDest.clear();
+		// Update the destination state in case it hasn't caught up with some changes
+		m_stack[1]->update();
 		m_transitionTextureDest.draw(*m_stack[1]);
 		m_transitionTextureDest.display();
 
@@ -111,6 +122,8 @@ void StateManager::setTopState(std::string id)
 		m_transitionTextureDest.create(m_app.window.getSize().x, m_app.window.getSize().y);
 		//m_transitionTextureDest.setView(m_app.window.getView());
 		m_transitionTextureDest.clear();
+		// Update the next state in case ít hasn't caught up with some changes (e.g. window resize)
+		m_registered[id]->update();
 		m_transitionTextureDest.draw(*m_registered[id]);
 		m_transitionTextureDest.display();
 

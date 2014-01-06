@@ -1,3 +1,6 @@
 windowsize_x=1280
 windowsize_y=768
 vsync=true
+fullscreen=false
+fullscreen_x=1600
+fullscreen_y=900

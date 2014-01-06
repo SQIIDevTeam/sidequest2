@@ -30,7 +30,7 @@ void MainMenuState::draw(sf::RenderTarget& target, sf::RenderStates states) cons
 
 void MainMenuState::update()
 {
-	//m_borderSprite.setOrigin(m_borderSprite.getLocalBounds().width / 2.f, m_borderSprite.getLocalBounds().height / 2.f);
-	//m_borderSprite.setPosition(m_app.window.getView().getCenter());
+	m_menu.setOrigin(m_menu.getSize().x / 2.f, m_menu.getSize().y / 2.f);
+	m_menu.setPosition(m_app.window.getView().getCenter());
 	m_menu.update();
 }

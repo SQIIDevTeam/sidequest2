@@ -17,5 +17,12 @@ void CreditState::draw(sf::RenderTarget& target, sf::RenderStates states) const
 }
 void CreditState::update()
 {
+	sf::FloatRect rect(m_text.getLocalBounds());
+	m_text.setOrigin((rect.left + rect.width) / 2.f, (rect.top + rect.height) / 2.f);
+	m_text.setPosition(m_app.window.getView().getCenter());
 
+	if (m_app.inputmanager.isKeyHit(sf::Keyboard::Escape))
+	{
+		m_app.statemanager.popState();
+	}
 }
