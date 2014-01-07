@@ -5,6 +5,7 @@
 #include "StartupState.h"
 #include "MainMenuState.h"
 #include "CreditState.h"
+#include "OptionState.h"
 
 App::App(Config& c)
 	: m_accumulator(0)
@@ -12,7 +13,7 @@ App::App(Config& c)
 	, statemanager(*this)
 	, inputmanager(this->window)
 	, m_fullscreen(c.get<bool>("fullscreen"))
-	, m_config(c)
+	, config(c)
 {
 	if (m_fullscreen)
 	{
@@ -34,18 +35,21 @@ App::App(Config& c)
 	statemanager.registerState("startup",	std::unique_ptr<State>(new StartupState	(*this)));
 	statemanager.registerState("mainmenu",	std::unique_ptr<State>(new MainMenuState(*this)));
 	statemanager.registerState("credits",	std::unique_ptr<State>(new CreditState	(*this)));
+	statemanager.registerState("options",	std::unique_ptr<State>(new OptionState	(*this)));
 	statemanager.pushState("startup");
 }
 
 void App::run()
 {
-	while (window.isOpen() && statemanager.isRunning())
+	while (statemanager.isRunning())
 	{
 		sf::Event e;
 		while (window.pollEvent(e))
 		{
 			if (e.type == sf::Event::Closed)
-				window.close();
+				statemanager.setRunning(false);
+			else if (e.type == sf::Event::Resized)
+				onResize();
 		}
 
 		float frametime = m_clock.restart().asSeconds();
@@ -98,16 +102,16 @@ void App::setFullscreen(bool fullscreen)
 	if (fullscreen)
 	{
 		m_fullscreen = true;
-		sf::VideoMode mode(m_config.get<unsigned int>("fullscreen_x"), m_config.get<unsigned int>("fullscreen_y"));
+		sf::VideoMode mode(config.get<unsigned int>("fullscreen_x"), config.get<unsigned int>("fullscreen_y"));
 		validateVideoMode(mode);
 		window.create(mode, "SideQuest II", sf::Style::Fullscreen);
-		window.setVerticalSyncEnabled(m_config.get<bool>("vsync"));
+		window.setVerticalSyncEnabled(config.get<bool>("vsync"));
 		window.clear();
 		window.display();
 		return;
 	}
 	m_fullscreen = false;
-	sf::VideoMode mode(m_config.get<unsigned int>("windowsize_x"), m_config.get<unsigned int>("windowsize_y"));
+	sf::VideoMode mode(config.get<unsigned int>("windowsize_x"), config.get<unsigned int>("windowsize_y"));
 	validateVideoMode(mode);
 	window.create(mode, "SideQuest II", sf::Style::Default);
 	window.clear();
@@ -139,4 +143,9 @@ void App::validateVideoMode(sf::VideoMode& mode)
 			}
 		}
 	}
+}
+
+bool App::isFullscreen() const
+{
+	return m_fullscreen;
 }

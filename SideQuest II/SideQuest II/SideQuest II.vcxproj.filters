@@ -43,6 +43,9 @@
     <ClCompile Include="CreditState.cpp">
       <Filter>Game\States\CreditState</Filter>
     </ClCompile>
+    <ClCompile Include="OptionState.cpp">
+      <Filter>Game\States\OptionState</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Game">
@@ -99,6 +102,9 @@
     <Filter Include="Game\States\CreditState">
       <UniqueIdentifier>{8b5aa450-2cd8-472a-8239-a3fc83841b7e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\States\OptionState">
+      <UniqueIdentifier>{42fc4779-c326-4863-8773-d8fdfb825bec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h">
@@ -148,6 +154,9 @@
     </ClInclude>
     <ClInclude Include="CreditState.h">
       <Filter>Game\States\CreditState</Filter>
+    </ClInclude>
+    <ClInclude Include="OptionState.h">
+      <Filter>Game\States\OptionState</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

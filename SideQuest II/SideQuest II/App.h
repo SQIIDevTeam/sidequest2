@@ -3,7 +3,7 @@
 #include "StateManager.h"
 #include "ResourceManager.h"
 #include "InputManager.h"
-class Config;
+#include "Config.h"
 
 class App
 {
@@ -11,7 +11,7 @@ public:
 	App(Config& c);
 
 	void run();
-
+	bool isFullscreen() const;
 public:
 	float timestep;
 	sf::RenderWindow window;
@@ -19,6 +19,7 @@ public:
 	TextureManager texturemanager;
 	FontManager fontmanager;
 	InputManager inputmanager;
+	Config& config;
 private:
 	void update();
 	void render();
@@ -29,6 +30,6 @@ private:
 	float m_accumulator;
 	sf::Clock m_clock;
 	bool m_fullscreen;
-	Config& m_config;
+	
 };
 

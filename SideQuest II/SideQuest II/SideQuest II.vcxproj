@@ -91,6 +91,7 @@
     <ClCompile Include="Libs.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="OptionState.cpp" />
     <ClCompile Include="RectState.cpp" />
     <ClCompile Include="SideQuestMain.cpp" />
     <ClCompile Include="Stack.cpp" />
@@ -107,6 +108,7 @@
     <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="math.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="OptionState.h" />
     <ClInclude Include="RectState.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Stack.h" />
