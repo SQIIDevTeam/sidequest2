@@ -6,10 +6,11 @@ OptionState::OptionState(App& app)
 , m_fullscreenResIndex(0)
 , m_desktopResIndex(0)
 , m_font(m_app.fontmanager.get("Assets/Fonts/ALGER.TTF"))
+, m_videoModes(sf::VideoMode::getFullscreenModes().size())
 {
 	// Select all VideoModes with 32 Bit per Pixel, no one wants the others
 	std::vector<sf::VideoMode> videoModes(sf::VideoMode::getFullscreenModes());
-	std::copy_if(videoModes.begin(), videoModes.end(), m_videoModes.end(), [](sf::VideoMode mode){
+	std::copy_if(videoModes.begin(), videoModes.end(), m_videoModes.begin(), [](sf::VideoMode mode){
 		return mode.bitsPerPixel == 32;
 	});
 
