@@ -13,6 +13,8 @@ public:
 
 	virtual void onEnter(){};
 	virtual void onExit(){};
+
+	virtual void handleEvent(sf::Event& event){}
 protected:
 	App& m_app;
 };

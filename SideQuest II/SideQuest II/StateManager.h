@@ -15,6 +15,7 @@ public:
 	void popState();
 	void setTopState(std::string id);
 
+	void handleEvent(sf::Event& event);
 	void update();
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 

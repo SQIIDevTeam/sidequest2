@@ -11,11 +11,15 @@ Config::Config(std::string filename)
 		std::string line;
 		std::getline(file, line);
 
-		auto index = line.find('=');
-		if (index == line.size() - 1)
-			continue;
+		if (line.size() >= 2 && line[0] != '/' && line[1] != '/')
+		{
 
-		 m_config.insert(std::make_pair(std::string(line.begin(), line.begin() + (index)), std::string(line.begin() + (index + 1), line.end())));
+			auto index = line.find('=');
+			if (index == line.size() - 1)
+				continue;
+
+			m_config.insert(std::make_pair(std::string(line.begin(), line.begin() + (index)), std::string(line.begin() + (index + 1), line.end())));
+		}
 	}
 }
 

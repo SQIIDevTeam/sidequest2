@@ -7,6 +7,9 @@ public:
 	StartupState(App& app);
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 	virtual void update();
+
+	virtual void handleEvent(sf::Event& event);
+
 private:
 	sf::Texture& m_logotex;
 	sf::Sprite m_logosprite;

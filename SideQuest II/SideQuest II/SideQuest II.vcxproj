@@ -54,12 +54,13 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>../../Libs/SFML/Headers</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../Libs/SFML/Headers;../../Libs/PugiXML/Headers</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../../Libs/SFML/$(Configuration)Lib/</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../Libs/SFML/$(Configuration)Lib/;../../Libs/PugiXML/$(Configuration)Lib/</AdditionalLibraryDirectories>
+      <AdditionalDependencies>pugixml.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -72,13 +73,15 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../../Libs/SFML/Headers;../../Libs/PugiXML/Headers</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>../../Libs/SFML/$(Configuration)/</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../Libs/SFML/$(Configuration)Lib/;../../Libs/PugiXML/$(Configuration)Lib/</AdditionalLibraryDirectories>
+      <AdditionalDependencies>pugixml.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -92,11 +95,14 @@
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="OptionState.cpp" />
+    <ClCompile Include="PlayState.cpp" />
     <ClCompile Include="RectState.cpp" />
     <ClCompile Include="SideQuestMain.cpp" />
     <ClCompile Include="Stack.cpp" />
     <ClCompile Include="StartupState.cpp" />
     <ClCompile Include="StateManager.cpp" />
+    <ClCompile Include="Tilemap.cpp" />
+    <ClCompile Include="TilemapObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
@@ -109,13 +115,17 @@
     <ClInclude Include="math.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="OptionState.h" />
+    <ClInclude Include="PlayState.h" />
     <ClInclude Include="RectState.h" />
     <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="sfHelper.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="StartupState.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="string_op.h" />
+    <ClInclude Include="Tilemap.h" />
+    <ClInclude Include="TilemapObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -25,12 +25,18 @@ void StartupState::update()
 	m_time_elapsed += m_app.timestep;
 
 	m_continue_text.setColor(sf::Color(255, 255, 255, (sinf(m_time_elapsed * 3.f)+1.3f)/2.3f * 255));
-	// Set the sprite to the middle of the screen
-	m_logosprite.setOrigin(m_logosprite.getLocalBounds().width / 2.f, m_logosprite.getLocalBounds().height / 2.f);
-	m_logosprite.setPosition(m_app.window.getView().getCenter());
-
+	
 	if (m_app.inputmanager.isKeyHit(sf::Keyboard::Return))
 	{
 		m_app.statemanager.setTopState("mainmenu");
+	}
+}
+
+void StartupState::handleEvent(sf::Event& event)
+{
+	if (event.type == sf::Event::Resized)
+	{
+		m_logosprite.setOrigin(m_logosprite.getLocalBounds().width / 2.f, m_logosprite.getLocalBounds().height / 2.f);
+		m_logosprite.setPosition(m_app.window.getView().getCenter());
 	}
 }

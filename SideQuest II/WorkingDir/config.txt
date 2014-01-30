@@ -4,3 +4,5 @@ vsync=true
 fullscreen=false
 fullscreen_x=1600
 fullscreen_y=900
+//transition_mul=0.02
+transition_mul=0.1

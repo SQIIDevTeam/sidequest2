@@ -6,6 +6,7 @@
 #include "MainMenuState.h"
 #include "CreditState.h"
 #include "OptionState.h"
+#include "PlayState.h"
 
 App::App(Config& c)
 	: m_accumulator(0)
@@ -36,6 +37,7 @@ App::App(Config& c)
 	statemanager.registerState("mainmenu",	std::unique_ptr<State>(new MainMenuState(*this)));
 	statemanager.registerState("credits",	std::unique_ptr<State>(new CreditState	(*this)));
 	statemanager.registerState("options",	std::unique_ptr<State>(new OptionState	(*this)));
+	statemanager.registerState("play",		std::unique_ptr<State>(new PlayState	(*this)));
 	statemanager.pushState("startup");
 }
 
@@ -47,9 +49,18 @@ void App::run()
 		while (window.pollEvent(e))
 		{
 			if (e.type == sf::Event::Closed)
+			{
 				statemanager.setRunning(false);
+			}
 			else if (e.type == sf::Event::Resized)
+			{
 				onResize();
+				statemanager.handleEvent(e);
+			}
+			else
+			{
+				statemanager.handleEvent(e);
+			}
 		}
 
 		float frametime = m_clock.restart().asSeconds();

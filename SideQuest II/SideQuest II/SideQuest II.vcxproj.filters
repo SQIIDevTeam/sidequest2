@@ -46,6 +46,13 @@
     <ClCompile Include="OptionState.cpp">
       <Filter>Game\States\OptionState</Filter>
     </ClCompile>
+    <ClCompile Include="Tilemap.cpp">
+      <Filter>GameEngine\Tilemap</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayState.cpp">
+      <Filter>Game\States\PlayState</Filter>
+    </ClCompile>
+    <ClCompile Include="TilemapObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Game">
@@ -105,6 +112,12 @@
     <Filter Include="Game\States\OptionState">
       <UniqueIdentifier>{42fc4779-c326-4863-8773-d8fdfb825bec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\States\PlayState">
+      <UniqueIdentifier>{96125bb5-d6c9-47f6-a9c4-1322ad0e6b48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\Tilemap">
+      <UniqueIdentifier>{82fd8950-55c1-448c-9344-79577370a21a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h">
@@ -158,5 +171,15 @@
     <ClInclude Include="OptionState.h">
       <Filter>Game\States\OptionState</Filter>
     </ClInclude>
+    <ClInclude Include="sfHelper.h">
+      <Filter>GameEngine\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Tilemap.h">
+      <Filter>GameEngine\Tilemap</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayState.h">
+      <Filter>Game\States\PlayState</Filter>
+    </ClInclude>
+    <ClInclude Include="TilemapObject.h" />
   </ItemGroup>
 </Project>
