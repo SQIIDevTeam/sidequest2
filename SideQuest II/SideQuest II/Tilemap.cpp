@@ -74,14 +74,14 @@ void Tilemap::fillVAs()
 			unsigned int tex_x = (texture_index % (m_tilesetsize.x / m_tilesize.x)) * m_tilesize.x;
 			unsigned int tex_y = (texture_index / (m_tilesetsize.x / m_tilesize.x)) * m_tilesize.x;
 
-			unsigned int pos_x = (k % m_mapsize.x) * m_tilesize.x;
-			unsigned int pos_y = (k / m_mapsize.x) * m_tilesize.x;
+			unsigned int pos_x = (k % m_mapsize.x) * m_tilesize.x*2;
+			unsigned int pos_y = (k / m_mapsize.x) * m_tilesize.x*2;
 
 			sf::Vertex* quad = &m_layers[i][k * 4];
 			quad[0].position = sf::Vector2f(pos_x, pos_y);
-			quad[1].position = sf::Vector2f(pos_x + m_tilesize.x, pos_y);
-			quad[2].position = sf::Vector2f(pos_x + m_tilesize.x, pos_y + m_tilesize.y);
-			quad[3].position = sf::Vector2f(pos_x, pos_y + m_tilesize.y);
+			quad[1].position = sf::Vector2f(pos_x + m_tilesize.x*2, pos_y);
+			quad[2].position = sf::Vector2f(pos_x + m_tilesize.x*2, pos_y + m_tilesize.y*2);
+			quad[3].position = sf::Vector2f(pos_x, pos_y + m_tilesize.y*2);
 
 			quad[0].texCoords = sf::Vector2f(tex_x, tex_y);
 			quad[1].texCoords = sf::Vector2f(tex_x + m_tilesize.x, tex_y);
