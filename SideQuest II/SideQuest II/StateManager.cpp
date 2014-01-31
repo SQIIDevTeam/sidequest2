@@ -2,6 +2,8 @@
 #include "App.h"
 #include "math.h"
 
+#include <stdexcept>
+
 StateManager::StateManager(App& app)
 : m_app(app)
 , m_transitionAlpha(255)
