@@ -1,5 +1,5 @@
 #include <type_traits>
-#include <SFML\Graphics.hpp>
+#include <SFML/Graphics.hpp>
 
 template <typename T>
 inline void setOriginCenter(T& sfobject)

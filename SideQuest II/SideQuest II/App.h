@@ -1,5 +1,5 @@
 #pragma once
-#include <SFML\Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include "StateManager.h"
 #include "ResourceManager.h"
 #include "InputManager.h"
