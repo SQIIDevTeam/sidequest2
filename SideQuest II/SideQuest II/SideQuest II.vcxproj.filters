@@ -52,7 +52,9 @@
     <ClCompile Include="PlayState.cpp">
       <Filter>Game\States\PlayState</Filter>
     </ClCompile>
-    <ClCompile Include="TilemapObject.cpp" />
+    <ClCompile Include="TilemapObject.cpp">
+      <Filter>GameEngine\Tilemap</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Game">
@@ -180,6 +182,8 @@
     <ClInclude Include="PlayState.h">
       <Filter>Game\States\PlayState</Filter>
     </ClInclude>
-    <ClInclude Include="TilemapObject.h" />
+    <ClInclude Include="TilemapObject.h">
+      <Filter>GameEngine\Tilemap</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
