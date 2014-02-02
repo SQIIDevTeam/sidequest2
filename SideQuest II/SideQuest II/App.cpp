@@ -8,6 +8,9 @@
 #include "OptionState.h"
 #include "PlayState.h"
 
+/**
+	Sets up the window, statemanager, inputmanager, etc.
+*/
 App::App(Config& c)
 	: m_accumulator(0)
 	, timestep(1.f / 60.f)
@@ -41,6 +44,9 @@ App::App(Config& c)
 	statemanager.pushState("startup");
 }
 
+/**
+	Contains the main loop
+*/
 void App::run()
 {
 	while (statemanager.isRunning())
@@ -80,6 +86,9 @@ void App::run()
 
 }
 
+/**
+	Updates the game states, and sets the view to match the window size every frame
+*/
 void App::update()
 {
 	statemanager.update();
@@ -94,6 +103,9 @@ void App::update()
 	window.setView(view);
 }
 
+/**
+	Renders the current state to the screen
+*/
 void App::render()
 {
 	window.clear();
@@ -156,6 +168,9 @@ void App::validateVideoMode(sf::VideoMode& mode)
 	}
 }
 
+///
+/// Returns the current fullscreen state
+///
 bool App::isFullscreen() const
 {
 	return m_fullscreen;
