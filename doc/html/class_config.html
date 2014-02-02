@@ -50,17 +50,20 @@
 <div class="title">Config Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_config_8h_source.html">Config.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aabd4efaa4f4d31be866a8e949cbb6c5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_config.html#aabd4efaa4f4d31be866a8e949cbb6c5b">Config</a> (std::string filename)</td></tr>
 <tr class="separator:aabd4efaa4f4d31be866a8e949cbb6c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65d6270b0c57bc593268cb46af32dcad"><td class="memTemplParams" colspan="2"><a class="anchor" id="a65d6270b0c57bc593268cb46af32dcad"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a65d6270b0c57bc593268cb46af32dcad"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>get</b> (std::string key) const </td></tr>
+<tr class="memitem:a65d6270b0c57bc593268cb46af32dcad"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a65d6270b0c57bc593268cb46af32dcad"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_config.html#a65d6270b0c57bc593268cb46af32dcad">get</a> (std::string key) const </td></tr>
 <tr class="separator:a65d6270b0c57bc593268cb46af32dcad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class handles config files. You can specify which file should be used with the first constructor parameter </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aabd4efaa4f4d31be866a8e949cbb6c5b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -78,6 +81,26 @@ template&lt;typename T &gt; </td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a65d6270b0c57bc593268cb46af32dcad"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T Config::get </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A template function that gets you the value in a config file in the type you specify in the template argument. Supported types are those who can be read in with the &gt;&gt; operator. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>SideQuest II/SideQuest II/<a class="el" href="_config_8h_source.html">Config.h</a></li>
 <li>SideQuest II/SideQuest II/Config.cpp</li>
@@ -85,7 +108,7 @@ template&lt;typename T &gt; </td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 2 2014 14:21:22 for Sidequest2 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 2 2014 18:32:44 for Sidequest2 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

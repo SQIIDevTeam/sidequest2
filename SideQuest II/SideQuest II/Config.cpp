@@ -3,8 +3,9 @@
 #include <sstream>
 #include <iostream>
 
+/** read the config file */
 Config::Config(std::string filename)
-/** read the config file */{
+{
 	std::ifstream file(filename, std::ios::in);
 	if (!file)
 	{
