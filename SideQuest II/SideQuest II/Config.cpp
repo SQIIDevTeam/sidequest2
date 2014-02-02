@@ -1,11 +1,16 @@
 #include "Config.h"
 #include <fstream>
 #include <sstream>
-
+#include <iostream>
 
 Config::Config(std::string filename)
 /** read the config file */{
 	std::ifstream file(filename, std::ios::in);
+	if (!file)
+	{
+		std::cerr << "Could not load config file: " << filename << '\n';
+		throw std::runtime_error(std::string("Config::(constructor): Could not load config file ") + filename);
+	}
 	while (!file.eof())
 	{
 		std::string line;
