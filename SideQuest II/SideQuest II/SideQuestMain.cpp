@@ -5,7 +5,7 @@
 #include "Config.h"
 
 int main()
-{
+/** Main of the Sidequest2 */{
 	try
 	{
 		Config c("config.txt");

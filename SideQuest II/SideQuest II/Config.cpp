@@ -4,7 +4,7 @@
 
 
 Config::Config(std::string filename)
-{
+/** read the config file */{
 	std::ifstream file(filename, std::ios::in);
 	while (!file.eof())
 	{
