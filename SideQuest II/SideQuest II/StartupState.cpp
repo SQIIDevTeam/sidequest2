@@ -5,7 +5,7 @@ StartupState::StartupState(App& app)
 : State(app)
 , m_logotex(m_app.texturemanager.get("Assets/Startup/logo.png"))
 , m_logosprite(m_logotex)
-, m_font(m_app.fontmanager.get("Assets/Fonts/ALGER.ttf"))
+, m_font(m_app.fontmanager.get("Assets/Fonts/ALGER.TTF"))
 , m_continue_text("Press Enter to continue...", m_font)
 , m_time_elapsed(0)
 {
