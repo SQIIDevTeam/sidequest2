@@ -4,7 +4,7 @@
 CreditState::CreditState(App& app)
 : State(app)
 , m_font(m_app.fontmanager.get("Assets/Fonts/ALGER.TTF"))
-, m_text("Patrick Hahn \nDavid Schilling", m_font, 40)
+, m_text("patrick246 \nNautha \nMarkusH", m_font, 40)
 {
 	sf::FloatRect rect(m_text.getLocalBounds());
 	m_text.setOrigin((rect.left + rect.width) / 2.f, (rect.top + rect.height) /2.f);

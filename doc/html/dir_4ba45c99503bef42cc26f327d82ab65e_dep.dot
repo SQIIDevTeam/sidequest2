@@ -1,0 +1,9 @@
+digraph "SideQuest II/SideQuest II" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_0773a9c9045db70512aec2b18d0cd07f {
+    graph [ bgcolor="#ddddee", pencolor="black", label="SideQuest II" fontname="Helvetica", fontsize="10", URL="dir_0773a9c9045db70512aec2b18d0cd07f.html"]
+  dir_4ba45c99503bef42cc26f327d82ab65e [shape=box, label="SideQuest II", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_4ba45c99503bef42cc26f327d82ab65e.html"];
+  }
+}
