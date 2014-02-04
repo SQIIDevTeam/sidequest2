@@ -55,6 +55,7 @@
     <ClCompile Include="TilemapObject.cpp">
       <Filter>GameEngine\Tilemap</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Game">
@@ -119,6 +120,9 @@
     </Filter>
     <Filter Include="GameEngine\Tilemap">
       <UniqueIdentifier>{82fd8950-55c1-448c-9344-79577370a21a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Player">
+      <UniqueIdentifier>{7beb99f4-4e14-460a-823e-8af3417c7ef4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -185,5 +189,6 @@
     <ClInclude Include="TilemapObject.h">
       <Filter>GameEngine\Tilemap</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h" />
   </ItemGroup>
 </Project>

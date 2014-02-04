@@ -95,6 +95,7 @@
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="OptionState.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayState.cpp" />
     <ClCompile Include="RectState.cpp" />
     <ClCompile Include="SideQuestMain.cpp" />
@@ -115,6 +116,7 @@
     <ClInclude Include="math.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="OptionState.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="PlayState.h" />
     <ClInclude Include="RectState.h" />
     <ClInclude Include="ResourceManager.h" />

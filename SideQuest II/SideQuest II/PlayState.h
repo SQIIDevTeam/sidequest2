@@ -1,6 +1,7 @@
 #pragma once
 #include "State.h"
 #include "Tilemap.h"
+#include "Player.h"
 
 
 class PlayState :
@@ -14,5 +15,6 @@ public:
 
 private:
 	Tilemap m_tilemap;
+	Player m_player;
 };
 
