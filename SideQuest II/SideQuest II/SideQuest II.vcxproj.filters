@@ -55,7 +55,9 @@
     <ClCompile Include="TilemapObject.cpp">
       <Filter>GameEngine\Tilemap</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Player.cpp">
+      <Filter>Game\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Game">
@@ -189,6 +191,8 @@
     <ClInclude Include="TilemapObject.h">
       <Filter>GameEngine\Tilemap</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="Player.h">
+      <Filter>Game\Player</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
