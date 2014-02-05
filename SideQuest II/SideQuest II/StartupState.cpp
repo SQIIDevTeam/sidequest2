@@ -11,7 +11,7 @@ StartupState::StartupState(App& app)
 {
 	sf::FloatRect textRect = m_continue_text.getLocalBounds();
 	m_continue_text.setOrigin(textRect.left + textRect.width / 2.f, textRect.top + textRect.height / 2.f);
-	m_continue_text.setPosition(sf::Vector2f(m_app.window.getSize().x / 2.f, m_app.window.getSize().y - 50));
+	m_continue_text.setPosition(sf::Vector2f(m_app.window.getSize().x / 2.f, m_app.window.getSize().y - 50.f));
 }
 
 void StartupState::draw(sf::RenderTarget& target, sf::RenderStates states) const
@@ -24,7 +24,7 @@ void StartupState::update()
 {
 	m_time_elapsed += m_app.timestep;
 
-	m_continue_text.setColor(sf::Color(255, 255, 255, (sinf(m_time_elapsed * 3.f)+1.3f)/2.3f * 255));
+	m_continue_text.setColor(sf::Color(255, 255, 255, static_cast<sf::Uint8>((sinf(m_time_elapsed * 3.f)+1.3f)/2.3f * 255)));
 	
 	if (m_app.inputmanager.isKeyHit(sf::Keyboard::Return))
 	{

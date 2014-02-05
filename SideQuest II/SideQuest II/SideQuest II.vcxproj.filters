@@ -52,11 +52,14 @@
     <ClCompile Include="PlayState.cpp">
       <Filter>Game\States\PlayState</Filter>
     </ClCompile>
-    <ClCompile Include="TilemapObject.cpp">
-      <Filter>GameEngine\Tilemap</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Game\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="TilemapObject.cpp">
+      <Filter>GameEngine\Tilemap\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="TilemapObjectLayer.cpp">
+      <Filter>GameEngine\Tilemap\Layers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +129,12 @@
     <Filter Include="Game\Player">
       <UniqueIdentifier>{7beb99f4-4e14-460a-823e-8af3417c7ef4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameEngine\Tilemap\Objects">
+      <UniqueIdentifier>{130ed3d2-c596-47bf-8881-4bedfd9e8d59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\Tilemap\Layers">
+      <UniqueIdentifier>{cdc28820-6b57-4fb7-b8bc-54d7bbfd13ad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h">
@@ -188,11 +197,14 @@
     <ClInclude Include="PlayState.h">
       <Filter>Game\States\PlayState</Filter>
     </ClInclude>
-    <ClInclude Include="TilemapObject.h">
-      <Filter>GameEngine\Tilemap</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Game\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="TilemapObject.h">
+      <Filter>GameEngine\Tilemap\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="TilemapObjectLayer.h">
+      <Filter>GameEngine\Tilemap\Layers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -104,6 +104,7 @@
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="Tilemap.cpp" />
     <ClCompile Include="TilemapObject.cpp" />
+    <ClCompile Include="TilemapObjectLayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
@@ -128,6 +129,7 @@
     <ClInclude Include="string_op.h" />
     <ClInclude Include="Tilemap.h" />
     <ClInclude Include="TilemapObject.h" />
+    <ClInclude Include="TilemapObjectLayer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

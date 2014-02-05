@@ -38,23 +38,7 @@ void Tilemap::loadFromFile(std::string filename)
 	// And the object layers
 	for (pugi::xml_node node = map.child("objectgroup"); node; node = node.next_sibling("objectgroup"))
 	{
-		m_objects.push_back(std::vector<TilemapObject>());
-		for (pugi::xml_node object = node.child("object"); object; object = object.next_sibling("object"))
-		{
-			m_objects[m_objects.size() - 1].emplace_back
-											(
-												object.attribute("name").as_string(), 
-												object.attribute("type").as_string(), 
-												sf::Vector2u(
-													object.attribute("x").as_uint(), 
-													object.attribute("y").as_uint()
-												), 
-												sf::Vector2u(
-													object.attribute("width").as_uint(), 
-													object.attribute("height").as_uint()
-												)
-											);
-		}
+		m_objects.emplace_back(node);
 	}
 	fillVAs();
 }
@@ -78,15 +62,15 @@ void Tilemap::fillVAs()
 			unsigned int pos_y = (k / m_mapsize.x) * m_tilesize.x*2;
 
 			sf::Vertex* quad = &m_layers[i][k * 4];
-			quad[0].position = sf::Vector2f(pos_x, pos_y);
-			quad[1].position = sf::Vector2f(pos_x + m_tilesize.x*2, pos_y);
-			quad[2].position = sf::Vector2f(pos_x + m_tilesize.x*2, pos_y + m_tilesize.y*2);
-			quad[3].position = sf::Vector2f(pos_x, pos_y + m_tilesize.y*2);
+			quad[0].position = sf::Vector2f(static_cast<float>(pos_x),						static_cast<float>(pos_y));
+			quad[1].position = sf::Vector2f(static_cast<float>(pos_x + m_tilesize.x * 2),	static_cast<float>(pos_y));
+			quad[2].position = sf::Vector2f(static_cast<float>(pos_x + m_tilesize.x * 2),	static_cast<float>(pos_y + m_tilesize.y * 2));
+			quad[3].position = sf::Vector2f(static_cast<float>(pos_x),						static_cast<float>(pos_y + m_tilesize.y * 2));
 
-			quad[0].texCoords = sf::Vector2f(tex_x, tex_y);
-			quad[1].texCoords = sf::Vector2f(tex_x + m_tilesize.x, tex_y);
-			quad[2].texCoords = sf::Vector2f(tex_x + m_tilesize.x, tex_y + m_tilesize.y);
-			quad[3].texCoords = sf::Vector2f(tex_x, tex_y + m_tilesize.y);
+			quad[0].texCoords = sf::Vector2f(static_cast<float>(tex_x),						static_cast<float>(tex_y));
+			quad[1].texCoords = sf::Vector2f(static_cast<float>(tex_x + m_tilesize.x),		static_cast<float>(tex_y));
+			quad[2].texCoords = sf::Vector2f(static_cast<float>(tex_x + m_tilesize.x),		static_cast<float>(tex_y + m_tilesize.y));
+			quad[3].texCoords = sf::Vector2f(static_cast<float>(tex_x),						static_cast<float>(tex_y + m_tilesize.y));
 		}
 	}
 }

@@ -151,7 +151,7 @@ void StateManager::update()
 	}
 	if (m_transitionState == TransitionState::IN_PROGRESS_BLEND_DOWN)
 	{
-		m_transitionAlpha = static_cast<int>(lerp(static_cast<int>(m_transitionAlpha), 0.f, m_transitionTimeSec * m_app.config.get<float>("transition_mul")) - 0.5f);
+		m_transitionAlpha = static_cast<int>(lerp(static_cast<float>(m_transitionAlpha), 0.f, m_transitionTimeSec * m_app.config.get<float>("transition_mul")) - 0.5f);
 		m_transitionTimeSec += m_app.timestep;
 	
 		if (m_transitionAlpha <= 10)
@@ -177,7 +177,7 @@ void StateManager::update()
 	}
 	if (m_transitionState == TransitionState::IN_PROGRESS_BLEND_UP)
 	{
-		m_transitionAlpha = static_cast<int>(lerp(static_cast<int>(m_transitionAlpha), 255.f, m_transitionTimeSec * m_app.config.get<float>("transition_mul")) + 0.5f);
+		m_transitionAlpha = static_cast<int>(lerp(static_cast<float>(m_transitionAlpha), 255.f, m_transitionTimeSec * m_app.config.get<float>("transition_mul")) + 0.5f);
 		m_transitionTimeSec += m_app.timestep;
 		if (m_transitionAlpha >= 240)
 		{

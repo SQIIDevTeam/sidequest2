@@ -3,6 +3,7 @@
 #include <pugixml.hpp>
 #include <SFML/Graphics.hpp>
 #include "TilemapObject.h"
+#include "TilemapObjectLayer.h"
 
 class App;
 
@@ -30,6 +31,6 @@ private:
 
 	std::vector<sf::VertexArray> m_layers;
 	std::vector<std::vector<unsigned int>> m_layerdata;
-	std::vector<std::vector<TilemapObject>> m_objects;
+	std::vector<TilemapObjectLayer> m_objects;
 };
 
