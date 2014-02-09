@@ -81,3 +81,14 @@ void Tilemap::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	for (std::size_t i = 0; i < m_layers.size(); i++)
 		target.draw(m_layers[i], states);
 }
+
+std::vector<TilemapObject> Tilemap::getObjects(std::string type)
+{
+	std::vector<TilemapObject> objects;
+	for (auto& layer : m_objects)
+	{
+		std::vector<TilemapObject> layerobjs = layer.getObjects(type);
+		objects.insert(objects.end(), layerobjs.begin(), layerobjs.end());
+	}
+	return objects;
+}

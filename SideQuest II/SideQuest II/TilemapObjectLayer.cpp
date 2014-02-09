@@ -26,3 +26,14 @@ TilemapObjectLayer::TilemapObjectLayer(pugi::xml_node xml)
 			);
 	}
 }
+
+std::vector<TilemapObject> TilemapObjectLayer::getObjects(std::string type)
+{
+	std::vector<TilemapObject> objects;
+	for (auto& object : m_objects)
+	{
+		if (object.type == type)
+			objects.push_back(object);
+	}
+	return objects;
+}

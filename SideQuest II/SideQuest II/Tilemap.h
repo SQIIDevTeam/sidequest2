@@ -18,7 +18,7 @@ public:
 	void fillVAs();
 
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-
+	std::vector<TilemapObject> getObjects(std::string type);
 private:
 	pugi::xml_document m_doc;
 	sf::Texture* m_tileset;

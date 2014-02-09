@@ -14,6 +14,8 @@ public:
 
 	template<typename T>
 	T getProperty(std::string name) const;
+
+	std::vector<TilemapObject> getObjects(std::string type);
 public:
 	std::string name;
 private:
